@@ -18,8 +18,8 @@ class LRUCache(BaseCaching):
         super().__init__()
 
     def put(self, key, item):
-        """ 
-        Assign an item to the dictionary 
+        """
+        Assign an item to the dictionary
         """
         if key and item:
             if self.cache_data.get(key):
