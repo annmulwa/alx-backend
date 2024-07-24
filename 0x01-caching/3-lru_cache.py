@@ -1,18 +1,26 @@
 #!/usr/bin/python3
-"""Create LRUCache class that inherits from BaseCaching"""
+"""
+Class LRUCache that inherits from BaseCaching and is a caching system.
+"""
 BaseCaching = __import__('base_caching').BaseCaching
 
 
 class LRUCache(BaseCaching):
-    """ Define LRUCache """
+    """
+    Inherits from BaseCaching and is a caching system.
+    """
 
     def __init__(self):
-        """ Initialize LRUCache """
+        """
+        Initializes Cache
+        """
         self.queue = []
         super().__init__()
 
     def put(self, key, item):
-        """ Assign the item to the dictionary """
+        """ 
+        Assign an item to the dictionary 
+        """
         if key and item:
             if self.cache_data.get(key):
                 self.queue.remove(key)
@@ -24,7 +32,9 @@ class LRUCache(BaseCaching):
                 print('DISCARD: {}'.format(delete))
 
     def get(self, key):
-        """ Return the value associated with the given key """
+        """
+        Return the value in self.cache_data linked to key
+        """
         if self.cache_data.get(key):
             self.queue.remove(key)
             self.queue.append(key)
